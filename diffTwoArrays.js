@@ -18,8 +18,8 @@ Method(2):-
 
 function diffArray(arr1, arr2) {
   const newArr = [];
-  const map1 = arr1.map(a => (arr2.indexOf(a) == -1 && newArr.push(a)));
-  const map2 = arr2.map(b => (arr1.indexOf(b) == -1 && newArr.push(b)));
+  arr1.map(a => (arr2.indexOf(a) == -1 && newArr.push(a)));
+  arr2.map(b => (arr1.indexOf(b) == -1 && newArr.push(b)));
   return newArr;
 };
 
