@@ -6,7 +6,7 @@ function sumFibs(num) {
   let previousElmnt  = 0;
   let currentElmnt   = 1
   let sum;
-  // collecting Fibonacci Numbers from 0 - num to newArr
+  // collecting Fibonacci Numbers from 0 to num in newArr
   for(let i = 0; i <= num; i++) {
     sum = previousElmnt + currentElmnt;
     previousElmnt = currentElmnt;
