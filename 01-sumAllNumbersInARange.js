@@ -1,3 +1,4 @@
+// Aim => to Sum All Numbers inbetween the both given arguments
 // Method 1:
 
 function sumAll(arr) {
