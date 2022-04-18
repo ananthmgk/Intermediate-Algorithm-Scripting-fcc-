@@ -1,24 +1,29 @@
 Method :1:-
 
+// - If a word begins with a consonant, take the first consonant or consonant cluster, move it to the end of the word, and add ay to it.
+
+// - If a word begins with a vowel, just add way at the end.
+
 function translatePigLatin(str) {
-  const vowels = ['a', 'e', 'i', 'o', 'u'];
-  const regex = /[aeiou]/gi;
+  const arrOfVowels = ['a', 'e', 'i', 'o', 'u'];
+  const regexVowels = /[aeiou]/gi;
   let finalStr = "";
-  if(str[0].match(regex)) {
+  // if the first letter of the string is a vowels, just add "way" at the end.
+  if(str[0].match(regexVowels)) {
     finalStr = `${str}way`;
-  } else {
-    let count = 0;
-    let array = [];
-  for(let some of str) {
-    if(vowels.indexOf(some) == -1) {
+  } else { // for other cases
+    let count = 0; // here count will count the non vowels letters.
+    let nonVowelLetters = []; // non vowels letters are pushed in this nonVowelLetters.
+  for(let letter of str) {
+    if(arrOfVowels.indexOf(letter) == -1) {
       count++;
-      array.push(some);
+      nonVowelLetters.push(letter);
     } else {
-      finalStr = `${str.slice(count)}${array.join('')}ay`;
+      finalStr = `${str.slice(count)}${nonVowelLetters.join('')}ay`;
       return finalStr;
     } 
   }  finalStr = `${str}ay`;
       return finalStr;
-  }; return finalStr;
+  }; return finalStr; // "way" added str.
 }
 console.log(translatePigLatin("california"));
