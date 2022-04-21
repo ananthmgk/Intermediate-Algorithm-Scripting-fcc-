@@ -20,3 +20,27 @@ function sumPrimes(num) {
 };
 console.log(sumPrimes(10)); // => 17
 // --------------------------*---------------------------*----------------------------------*-------------------------------------
+
+// Method 2:
+
+function sumPrimes(num) {
+  // the below func to check whether the num is prime numbers or not,
+  function isPrime(num) {
+    // in this loop we starts from 2 because 1 is not a prime number.
+    for(let i = 2; i < num; i++) {
+      // if the remainder is zero it's not a prime number.
+      if(num % i == 0) {
+        return false;
+      } 
+    } return true; // if it is a prime return true.
+  };
+
+  let sum = 0;
+  for(let i = 2; i <= num; i++) {
+    if(isPrime(i)) {
+      sum +=i;
+    }
+    // here the sum variable sum all the prime numbers.
+  } return sum;
+};
+console.log(sumPrimes(10)); // => 17.
