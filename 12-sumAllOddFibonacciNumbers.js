@@ -20,3 +20,23 @@ function sumFibs(num) {
 console.log(sumFibs(10));
 
 //------------------*---------------------------*----------------------------*------------------------------------------------
+
+// Method 2:
+
+function sumFibs(num) {
+  // here all the odd Fibonacci numbers are added and stored in this oddFibSum variable.
+  let oddFibSum = 0;
+  let previous = 0;
+  let current = 1;
+// here while loop is better than for loop, because i value is not necessary.
+  while (current <= num) {
+    if(current % 2 !== 0) {
+      oddFibSum += current;
+    }
+    let temp = previous + current;
+    previous = current;
+    current = temp;
+  }
+  return oddFibSum;
+}
+console.log(sumFibs(4000000)); // => 4613732.
