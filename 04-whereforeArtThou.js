@@ -19,7 +19,7 @@ function whatIsInAName(collection, source) {
       };
   };
   return arr;
-
+};
 console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
 // it will return => [ { first: 'Tybalt', last: 'Capulet' } ]..
 // ------------------*-----------------------*----------------------------------*-----------------------------*----------------------------
